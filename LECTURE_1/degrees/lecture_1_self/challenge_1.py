@@ -41,8 +41,53 @@ def solve_maze_dfs(maze):
             if 0 <=nx < len(maze) and 0 <= ny<len(maze[0]):
                 if maze[x][ny] !="#" and (nx,ny) not in visited:
                     stack.append(((nx,ny),path + [(nx,ny)]))
-
     return None
+
+def solve_maze_bfs(maze):
+    start = find_start(maze)
+    if not start:
+        return None
+    
+    que = deque()
+    que.append([start,[start]])
+    visited = set()
+
+    while que:
+        (x,y),path = que.pop(-1)
+
+        if (x,y) in visited:
+            continue
+
+        visited.add((x,y))
+        if maze[x][y] == "B":
+            return path
+        
+        for dx,dy in [(-1,0),(1,0),(0,-1),(0,1)]:
+            nx,ny = x + dx ,y = y +dy 
+            if 0 <=nx <len(maze) and  0 <= ny <len(maze[0]):
+                if maze[x][ny] !="#" and (nx,ny) not in visited:
+                    que.append(((nx,ny),path +[(nx,ny)]))
+    return None
+        
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 solution = solve_maze_dfs(maze)
 print("PATH: ", solution)
 
