@@ -1,11 +1,28 @@
-"""
-✅ 2. Maze Solver with DFS & BFS (You Choose Start and Goal)
-Write a program that takes any maze grid (as a 2D list) and lets the user specify a start and goal. Implement both:
+from collections import deque
+start = "hit"
+goal = "cog"
+dictionary = {"hot", "dot", "dog", "lot", "log", "cog"}
 
-DFS: show any path (not necessarily shortest)
+def word_ladder(start,goal,dictionary):
 
-BFS: show the shortest path
+    if goal not in dictionary:
+        return None
 
-Try with walls (#), free spaces ( ), start (A), goal (B)
+    que = deque()
+    que.append((start,[start]))
 
-"""
+
+    while que:
+        current_word,path = que.popleft()
+
+        if current_word == goal:
+            return path
+
+        for i in range(len(current_word)):
+            for c in 'abcdefghijklmnopqrstuvwxyz':
+                next_word = current_word[:i]+c  + current_word[i+1:]
+                if  next_word in dictionary and next_word not in path:
+                    que.append((next_word,path+[next_word]))
+    return None
+print(word_ladder(start,goal,dictionary))
+
