@@ -1,0 +1,101 @@
+✅ 1. Word Ladder II (All Shortest Paths) — BFS with Backtracking
+Problem: Return all shortest transformation sequences from start to goal.
+
+Input: start = "hit", goal = "cog", dictionary = {...}
+
+Output:
+
+python
+Copy code
+[["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+📌 This requires BFS to find the shortest level, and backtracking to find all paths.
+
+
+
+
+
+
+✅ 2. Maze Solver with DFS & BFS (You Choose Start and Goal)
+Write a program that takes any maze grid (as a 2D list) and lets the user specify a start and goal. Implement both:
+
+DFS: show any path (not necessarily shortest)
+
+BFS: show the shortest path
+
+Try with walls (#), free spaces ( ), start (A), goal (B)
+
+✅ 3. Knight’s Shortest Path (Chessboard BFS)
+Given a chessboard and a starting square, find the shortest number of moves a knight needs to reach a target square.
+
+Input: start = (0,0), end = (7,7)
+Output: 6 (minimum knight moves)
+
+📌 This teaches movement in 2D space with non-obvious rules.
+
+✅ 4. Word Morph Puzzle (Custom Dictionary)
+Given:
+
+python
+Copy code
+start = "cold"
+goal = "warm"
+dictionary = {"cold", "cord", "card", "ward", "warm", "core", "care"}
+Find the shortest transformation path from "cold" to "warm" using valid words. Only one letter can change at a time.
+
+✅ 5. Graph Traversal — Adjacency List Format
+Given a graph like:
+
+python
+Copy code
+graph = {
+  "A": ["B", "C"],
+  "B": ["A", "D", "E"],
+  "C": ["A", "F"],
+  "D": [],
+  "E": ["F"],
+  "F": []
+}
+Write:
+
+bfs(graph, start="A") → returns visit order
+
+dfs(graph, start="A") → returns visit order
+
+✅ 6. Water Jug Problem (State Space BFS)
+You have:
+
+A 4-liter jug
+
+A 3-liter jug
+
+You must measure exactly 2 liters using these operations:
+
+Fill, Empty, Pour
+
+Return a sequence of states showing how to get 2 liters in one jug.
+
+📌 This is state-space search, like AI search problems.
+
+✅ 7. Find the Shortest Binary Path
+Given a grid of 0s and 1s, where 1 is walkable and 0 is wall:
+
+python
+Copy code
+grid = [
+  [1, 1, 0],
+  [0, 1, 0],
+  [0, 1, 1]
+]
+Start: (0, 0)
+Goal: (2, 2)
+
+Return the length of shortest path of 1s. Use BFS.
+
+Would you like me to generate starter code for one of these now?
+
+
+
+
+
+
+
