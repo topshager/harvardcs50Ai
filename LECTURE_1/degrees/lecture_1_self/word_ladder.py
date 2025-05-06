@@ -22,7 +22,7 @@ def word_ladder(start,goal,dictionary ):
         
         for i in range(len(current_word)):
             for c in  'abcdefghijklmnopqrstuvwxyz':
-                next_word =current_word[:1] + c +current_word[i+1]
+                next_word =current_word[:1] + c +current_word[i+1:]
                 if next_word in dictionary and next_word not in path:
                     que.append((next_word,path+[next_word]))
     return None
