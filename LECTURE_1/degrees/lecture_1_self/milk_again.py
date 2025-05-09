@@ -6,7 +6,7 @@ Goal = 2
 
 
 def is_goal(state):
-    return state[0] == Goal or State[1] == Goal
+    return state[0] == Goal or state[1] == Goal
 
 def get_next_state(state):
     x,y = state
@@ -49,5 +49,11 @@ def bfs():
             path.reverse()
             return path
         for next_state in  get_next_state(current):
+            if next_state not in visited:
+                visited.add(next_state)
+                parent[next_state] = current
+                queue.append(next_state)
+
+    return None
             
         
