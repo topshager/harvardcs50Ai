@@ -103,9 +103,23 @@ def shortest_path(source, target):
         return []
     
     start  = Node(state=source,parent=None,action=None)
+    #state = 1
     frontier.append(start)
 
     while frontier:
+       node  = frontier.remove()
+       current_state = node.state
+       next_people = neighbors_for_person(current_state)
+
+       for neighbours in next_people:
+           
+
+
+
+
+
+
+
         
 
         
