@@ -94,7 +94,7 @@ def shortest_path(source, target):
 
     #source
     #target 
-    queue = QueueFrontier()
+    frontier = QueueFrontier()
     visited = set()
 
 
@@ -102,11 +102,12 @@ def shortest_path(source, target):
     if  source == target:
         return []
     
+    start  = Node(state=source,parent=None,action=None)
+    frontier.append(start)
 
-    queue.append(source)
-
-    while queue:
+    while frontier:
         
+
         
 
 
