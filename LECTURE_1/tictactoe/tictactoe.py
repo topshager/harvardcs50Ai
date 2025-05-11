@@ -21,7 +21,16 @@ def initial_state():
 def player(board):
     """
     Returns player who has the next turn on a board.
-    """
+    """ 
+    x_count = sum(row.count('X') for row in board)
+    o_count = sum(row.count('O') for row in board)
+
+    if x_count <= o_count:
+        return  'X'
+    else:
+        return  'O'
+    
+
     raise NotImplementedError
 
 
@@ -29,6 +38,19 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
+    action = []
+    for i in enumerate(board):
+        for j in enumerate(i):
+            if i[j] == None:
+                actions.append((i,j))
+            else:
+                pass
+    return action
+
+
+
+
+    
     raise NotImplementedError
 
 
@@ -36,6 +58,7 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+
     raise NotImplementedError
 
 
@@ -64,4 +87,8 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+
+
+
+
     raise NotImplementedError
