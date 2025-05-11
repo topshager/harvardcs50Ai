@@ -39,12 +39,10 @@ def actions(board):
     Returns set of all possible actions (i, j) available on the board.
     """
     action = []
-    for i in enumerate(board):
-        for j in enumerate(i):
-            if i[j] == None:
+    for i , row in enumerate(board):
+        for j,cell in enumerate(row):
+           if cell is None:
                 actions.append((i,j))
-            else:
-                pass
     return action
 
 
@@ -120,7 +118,7 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
-    
+
 
 
 
