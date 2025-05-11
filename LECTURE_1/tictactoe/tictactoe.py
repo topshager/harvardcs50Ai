@@ -3,6 +3,7 @@ Tic Tac Toe Player
 """
 
 import math
+import copy
 
 X = "X"
 O = "O"
@@ -31,7 +32,7 @@ def player(board):
         return  'O'
     
 
-    raise NotImplementedError
+
 
 
 def actions(board):
@@ -42,25 +43,26 @@ def actions(board):
     for i , row in enumerate(board):
         for j,cell in enumerate(row):
            if cell is None:
-                actions.append((i,j))
+                action.append((i,j))
     return action
 
 
 
 
     
-    raise NotImplementedError
 
 
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    i,j = action.pop()
-    board[i][j] = player
-    return board
-
-    raise NotImplementedError
+    i,j = action
+    if board[i][j]  is not None:
+        raise Exception("Invalid action")
+    
+    new_board = copy.deepcopy(board)
+    new_board[i][j] = player(board)
+    return  new_board
 
 
 def winner(board):
@@ -82,8 +84,6 @@ def winner(board):
         return board[0][2]
     
     return None
-    
-    raise NotImplementedError
 
 
 def terminal(board):
@@ -97,7 +97,6 @@ def terminal(board):
             return False  
     return True
 
-    raise NotImplementedError
 
 
 def utility(board):
@@ -111,16 +110,53 @@ def utility(board):
     else:
         return 0
     
-    raise NotImplementedError
 
 
 def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+    if terminal(board):
+        return utility(board) ,None
+    
+    current = player(board)
+
+    def max_value(board):
+        if terminal(board):
+            return utility(board) , None
+        v = -math.inf
+        best_action = None
+        for action in actions(board):
+            min_result =  mini_value(result(board,action))[0]
+            if min_result > v:
+                v = min_result
+                best_action = action
+            if v == 1:
+                break 
+        return v,best_action
+    
+    def mini_value(board):
+        if terminal(board):
+            return utility(board),None
+        v = math.inf
+        best_action = None
+        for action in actions(board):
+            max_result = max_value(result(board,action))[0]
+            if max_result < v:
+                v = max_result
+                best_action = action
+            if v == -1:
+                break 
+        return v,best_action
+    if current == X:
+        return max_value(board)[1]
+    else:
+        return  mini_value(board)[1]
+        
+
+    
 
 
 
 
 
-    raise NotImplementedError
