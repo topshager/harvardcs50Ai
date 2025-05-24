@@ -1,0 +1,22 @@
+
+1. 🔀 Sliding Puzzle Solver (8-puzzle)
+Implement an AI agent that, given any initial configuration of the 8-puzzle, returns the shortest sequence of moves to reach the goal configuration using A* search with admissible heuristics.
+
+2. 🏙️ City Navigation with Real Map Data
+Using real geographic map data (e.g., OpenStreetMap), implement a search algorithm that finds the optimal walking path between two locations in a city using A* with a geospatial heuristic.
+
+3. ⛓️ Word Ladder Puzzle Solver (Hard Mode)
+Given a start word and an end word of equal length, generate the shortest sequence of valid English words that transforms the start into the end by changing one letter at a time, using A* search with a word similarity heuristic.
+
+4. 🚨 Maze Runner with Traps and Multiple Goals
+Design a search algorithm that navigates a grid-based maze, collects all keys, avoids traps, and exits at the goal with the minimum cost, accounting for weighted penalties and multiple objectives.
+
+5. 🧮 Custom Heuristic Design Challenge
+Given a classic search problem (e.g., knight's shortest path on a chessboard), develop and justify a custom admissible heuristic for A* that significantly reduces the number of expanded nodes compared to standard heuristics.
+
+6. 🧭 Pac-Man Search Agent
+Create a search-based AI agent that finds a path to a goal in a grid world while avoiding dynamically moving enemies, using real-time decision-making and predictive search strategies.
+
+7. 🧱 Escape Room Puzzle Solver
+Build an agent that solves a complex environment of rooms, keys, switches, and locked doors, where actions may have prerequisites or side effects, by finding the shortest valid action sequence to escape the room.
+
